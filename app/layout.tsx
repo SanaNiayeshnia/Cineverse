@@ -3,6 +3,7 @@ import { Space_Grotesk, Manrope } from "next/font/google";
 import "./globals.css";
 import { SidebarProvider } from "@/components/ui/sidebar";
 import { AppSidebar } from "@/components/layout/appSidebar/AppSidebar";
+import AppNavbar from "@/components/layout/AppNavbar";
 
 const spaceGrotesk = Space_Grotesk({
   variable: "--font-space-grotesk",
@@ -26,10 +27,11 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       className={`${spaceGrotesk.variable} ${manrope.variable} h-full antialiased dark`}
     >
       <body className="min-h-full flex flex-col bg-slate-950">
-        <SidebarProvider>
+        <SidebarProvider className="flex">
           <AppSidebar />
-          <main>
-            <div className="px-2">{children}</div>
+          <main className="grow p-2">
+            <AppNavbar />
+            <div>{children}</div>
           </main>
         </SidebarProvider>
       </body>
