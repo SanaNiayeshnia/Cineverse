@@ -15,6 +15,7 @@ import { sidebarItems } from "@/lib/constants/ui/sidebar.db";
 import { useState } from "react";
 import { TbSettings } from "react-icons/tb";
 import SidebarProfileItem from "./SidebarProfileItem";
+import Link from "next/link";
 
 export function AppSidebar() {
   const [openItem, setOpenItem] = useState<string | null>("Main");
@@ -46,9 +47,14 @@ export function AppSidebar() {
             <SidebarGroup className="text-white py-0">
               <SidebarGroupContent>
                 <SidebarMenu className=" space-y-4">
-                  <SidebarMenuItem className="flex hover:bg-white/7 rounded-sm items-center gap-2 text-lg transition-all duration-300 p-2">
-                    <TbSettings size={24} />
-                    Settings
+                  <SidebarMenuItem>
+                    <Link
+                      href="/settings"
+                      className="flex hover:bg-white/7 rounded-sm items-center gap-2 text-lg transition-all duration-300 p-2"
+                    >
+                      <TbSettings size={24} />
+                      Settings
+                    </Link>
                   </SidebarMenuItem>
                 </SidebarMenu>
               </SidebarGroupContent>

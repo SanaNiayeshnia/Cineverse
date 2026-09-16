@@ -13,11 +13,12 @@ import {
   TbWorld,
   TbCalendar,
   TbTrophy,
-  TbSettings,
-  TbUser,
   TbLayoutDashboard,
   TbUserHeart,
   TbCategory,
+  TbLogout,
+  TbUser,
+  TbWorldSearch,
 } from "react-icons/tb";
 export const sidebarItems: SidebarGroupItem[] = [
   {
@@ -81,7 +82,7 @@ export const sidebarItems: SidebarGroupItem[] = [
 
   {
     title: "Explore",
-    icon: TbCategory,
+    icon: TbWorldSearch,
     children: [
       {
         title: "Genres",
@@ -104,5 +105,17 @@ export const sidebarItems: SidebarGroupItem[] = [
         icon: TbTrophy,
       },
     ],
+  },
+];
+
+export const sidebarProdileItems = [
+  {
+    title: "Profile",
+    url: "/profile",
+    icon: TbUser,
+  },
+  {
+    title: "Logout",
+    icon: TbLogout,
   },
 ];

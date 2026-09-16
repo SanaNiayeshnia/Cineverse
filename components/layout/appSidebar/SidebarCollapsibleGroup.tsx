@@ -11,10 +11,11 @@ import {
   SidebarMenu,
   SidebarMenuItem,
 } from "@/components/ui/sidebar";
-import { TbChevronDownFilled, TbChevronUp } from "react-icons/tb";
+import { TbChevronDown } from "react-icons/tb";
 import { SidebarGroupItem } from "@/types/ui/sidebar.types";
 import { Dispatch, SetStateAction } from "react";
 import { usePathname } from "next/navigation";
+import { motion } from "motion/react";
 
 type SidebarCollapsibleGroupPropsType = {
   groupItem: SidebarGroupItem;
@@ -55,7 +56,14 @@ export default function SidebarCollapsibleGroup({
                 isGroupOpen ? "text-primary-50" : ""
               }`}
             >
-              {isGroupOpen ? <TbChevronUp /> : <TbChevronDownFilled />}
+              <motion.div
+                animate={{
+                  rotate: isGroupOpen ? 180 : 0,
+                }}
+                transition={{ duration: 0.2 }}
+              >
+                <TbChevronDown />
+              </motion.div>
             </span>
           </SidebarGroupLabel>
         </CollapsibleTrigger>
@@ -73,10 +81,16 @@ export default function SidebarCollapsibleGroup({
                 <SidebarMenuItem key={child?.title} className="relative py-1">
                   <Link
                     href={child?.url}
-                    className={`flex items-center gap-2 transition-all duration-300 hover:ps-2`}
+                    className={`flex items-center gap-2 transition-all duration-300 ${
+                      pathname !== child?.url ? "hover:ps-2" : "cursor-default"
+                    }`}
                   >
                     {pathname === child?.url && (
-                      <div className="absolute top-0 bottom-0 -left-12 bg-primary-50 size-8 rounded-sm me-2"></div>
+                      <motion.div
+                        layoutId="selector"
+                        className="absolute top-0 bottom-0 -left-12 bg-primary-50 size-8 rounded-sm me-2"
+                        transition={{ duration: 0.2 }}
+                      ></motion.div>
                     )}
 
                     <span
