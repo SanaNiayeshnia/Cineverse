@@ -46,7 +46,7 @@ export default function SidebarCollapsibleGroup({
         <CollapsibleTrigger
           className={`cursor-pointer py-2 transition-all duration-300 hover:bg-white/7 rounded-sm`}
         >
-          <SidebarGroupLabel className="text-white! text-base flex items-center gap-2 justify-between ">
+          <SidebarGroupLabel className="text-white! text-base flex items-center gap-2 justify-between font-normal!">
             <div className="flex items-center gap-2 text-lg">
               <GroupIcon size={24} />
               {groupItem?.title}
