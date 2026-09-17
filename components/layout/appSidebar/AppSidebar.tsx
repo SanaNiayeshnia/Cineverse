@@ -16,6 +16,7 @@ import { useState } from "react";
 import { TbSettings } from "react-icons/tb";
 import SidebarProfileItem from "./SidebarProfileItem";
 import Link from "next/link";
+import { motion } from "motion/react";
 
 export function AppSidebar() {
   const [openItem, setOpenItem] = useState<string | null>("Main");
@@ -31,7 +32,12 @@ export function AppSidebar() {
       >
         <div className="grow space-y-6">
           <SidebarHeader>
-            <Logo />
+            <motion.div
+              layoutId="logo"
+              transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
+            >
+              <Logo />
+            </motion.div>
           </SidebarHeader>
 
           <SidebarContent className="space-y-2">

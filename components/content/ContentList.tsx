@@ -45,7 +45,7 @@ export default function ContentList({
       ) : (
         <ContentListSwiper
           listTitle={title?.split(" ")?.join("-")}
-          items={fakeMovies}
+          items={fakeMovies?.slice(0, 10)}
         />
       )}
     </section>

@@ -3,7 +3,7 @@ import { Space_Grotesk, Rubik } from "next/font/google";
 import "./globals.css";
 import { SidebarProvider } from "@/components/ui/sidebar";
 import { AppSidebar } from "@/components/layout/appSidebar/AppSidebar";
-import AppNavbar from "@/components/layout/AppNavbar";
+import AppNavbar from "@/components/layout/appNavbar/AppNavbar";
 import "swiper/css";
 import "swiper/css/navigation";
 
