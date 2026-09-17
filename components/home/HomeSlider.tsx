@@ -52,19 +52,19 @@ const fakeSlides = [
 
 export default function HomeSlider() {
   return (
-    <section className="px-5">
+    <section>
       <Carousel
         opts={{ loop: true, align: "center" }}
         plugins={[Autoplay({ delay: 5000, stopOnInteraction: true }), Fade()]}
         className="w-full max-w-full"
       >
         <CarouselContent>
-          {fakeSlides?.map((slide, index) => (
-            <CarouselItem key={index} className={`translate-x-4`}>
+          {fakeSlides?.map((slide) => (
+            <CarouselItem key={slide?.id}>
               <div className="relative h-100">
                 <div className="absolute inset-0 bg-linear-to-t from-gray-950 via-gray-950/70 to-transparent from-1% via-30% z-2 p-4 flex items-end">
                   <div className="space-y-3">
-                    <h2 className="font-semibold text-2xl">{slide?.title}</h2>
+                    <h2 className="font-semibold text-3xl">{slide?.title}</h2>
                     <div className="flex items-center gap-4">
                       <p className="flex items-center gap-2">
                         <span className="bg-primary-50 rounded-xs text-xs text-black font-medium px-1 py-0.5">

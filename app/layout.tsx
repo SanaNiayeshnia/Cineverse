@@ -29,7 +29,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       <body className="min-h-full flex flex-col bg-slate-950">
         <SidebarProvider className="flex">
           <AppSidebar />
-          <main className="grow p-2 relative">
+          <main className="grow py-2 relative">
             <AppNavbar />
             <div>{children}</div>
           </main>
