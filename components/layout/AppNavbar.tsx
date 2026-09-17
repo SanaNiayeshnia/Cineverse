@@ -8,7 +8,7 @@ import { RiSearchLine } from "react-icons/ri";
 
 export default function AppNAvbar() {
   return (
-    <div className="p-2 flex justify-end gap-4 w-full">
+    <div className="px-2 py-3 flex justify-end gap-4 w-full sticky top-0 bg-gray-950">
       <InputGroup className="max-w-xs p-0.5! h-auto! rounded-xl bg-gray-900!">
         <InputGroupInput placeholder="Search..." className="text-base!" />
         <InputGroupAddon>

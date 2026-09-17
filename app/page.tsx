@@ -1,6 +1,9 @@
-import { AppSidebar } from "@/components/layout/appSidebar/AppSidebar";
-import { SidebarProvider } from "@/components/ui/sidebar";
+import HomeSlider from "@/components/home/HomeSlider";
 
 export default function Home() {
-  return <div>Home</div>;
+  return (
+    <div className="relative pt-5">
+      <HomeSlider />
+    </div>
+  );
 }
