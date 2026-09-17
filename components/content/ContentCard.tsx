@@ -20,7 +20,7 @@ export default function ContentCard({
     <div
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
-      className="bg-gray-800 p-2 rounded-lg overflow-hidden relative group/card cursor-pointer"
+      className="bg-gray-800 p-2 rounded-lg overflow-hidden relative group/card cursor-pointer w-full aspect-45/58 mx-2"
     >
       <Image
         src={content?.image}
@@ -30,7 +30,7 @@ export default function ContentCard({
       />
       <div className="absolute inset-0 backdrop-blur-2xl backdrop-brightness-50 bg-linear-to-t from-gray-950"></div>
 
-      <div className="w-45 h-58 relative rounded-md overflow-hidden">
+      <div className="w-full h-full  relative rounded-md overflow-hidden">
         <p className="absolute top-2 left-2 z-2 text-xs flex items-center gap-1 bg-gray-900 rounded py-0.5 px-1 group-hover/card:left-1/2 group-hover/card:-translate-x-1/2  group-hover/card:bg-transparent transition-all duration-300">
           <TbStarFilled className="text-primary-50" size={13} />
           {content?.imdb}/10
@@ -43,7 +43,7 @@ export default function ContentCard({
         />
 
         <div className="absolute inset-0 bg-linear-to-t from-gray-950 flex items-end justify-center ">
-          <div className="translate-y-full group-hover/card:translate-y-0 absolute inset-0 bg-gray-950/60 transition-all duration-300 flex items-center">
+          <div className="translate-y-full group-hover/card:translate-y-0 absolute inset-0 bg-gray-950/60 transition-all duration-300 flex items-center p-1">
             {isHovered && (
               <motion.div
                 layoutId={`${listTitle}-${content?.id}-content-details`}
@@ -52,7 +52,7 @@ export default function ContentCard({
                 <div className="space-y-1.5 flex flex-col items-center">
                   <motion.p
                     layoutId={`${listTitle}-${content?.id}-content-details-title`}
-                    className="font-medium text-sm line-clamp-1"
+                    className="font-medium text-sm line-clamp-2 text-center"
                   >
                     {content?.title}
                   </motion.p>
@@ -69,11 +69,11 @@ export default function ContentCard({
           {!isHovered && (
             <motion.div
               layoutId={`${listTitle}-${content?.id}-content-details`}
-              className="space-y-1.5 flex flex-col items-center"
+              className="space-y-1.5 flex flex-col items-center "
             >
               <motion.p
                 layoutId={`${listTitle}-${content?.id}-content-details-title`}
-                className="font-medium text-sm line-clamp-1"
+                className="font-medium text-sm line-clamp-2 text-center"
               >
                 {content?.title}
               </motion.p>

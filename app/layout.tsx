@@ -4,6 +4,8 @@ import "./globals.css";
 import { SidebarProvider } from "@/components/ui/sidebar";
 import { AppSidebar } from "@/components/layout/appSidebar/AppSidebar";
 import AppNavbar from "@/components/layout/AppNavbar";
+import "swiper/css";
+import "swiper/css/navigation";
 
 const spaceGrotesk = Space_Grotesk({
   variable: "--font-space-grotesk",
@@ -26,8 +28,8 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       lang="en"
       className={`${spaceGrotesk.variable} ${rubik.variable} h-full antialiased dark`}
     >
-      <body className="min-h-full flex flex-col bg-slate-950">
-        <SidebarProvider className="flex">
+      <body className="min-h-full bg-slate-950">
+        <SidebarProvider>
           <AppSidebar />
           <main className="grow py-2 relative">
             <AppNavbar />
