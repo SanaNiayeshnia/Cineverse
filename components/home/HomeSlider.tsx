@@ -52,7 +52,7 @@ const fakeSlides = [
 
 export default function HomeSlider() {
   return (
-    <section className="px-5">
+    <section className="grow">
       <Carousel
         opts={{ loop: true, align: "center" }}
         plugins={[Autoplay({ delay: 5000, stopOnInteraction: true }), Fade()]}

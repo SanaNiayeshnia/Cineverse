@@ -5,17 +5,23 @@ import { TbArrowRight } from "react-icons/tb";
 
 import ContentListSwiper from "./ContentListSwiper";
 import ContentCard from "./ContentCard";
+import { SwiperOptions } from "swiper/types";
 
 type ContentListPropsType = {
   title: string;
   viewAllUrl?: string;
   all?: boolean;
+  swiperBreakpoints?: {
+    [width: number]: SwiperOptions;
+    [ratio: string]: SwiperOptions;
+  };
 };
 
 export default function ContentList({
   title,
   all = false,
   viewAllUrl,
+  swiperBreakpoints,
 }: ContentListPropsType) {
   return (
     <section className=" max-w-full space-y-6 grid  px-5">
@@ -46,6 +52,7 @@ export default function ContentList({
         <ContentListSwiper
           listTitle={title?.split(" ")?.join("-")}
           items={fakeMovies?.slice(0, 10)}
+          breakpoints={swiperBreakpoints}
         />
       )}
     </section>

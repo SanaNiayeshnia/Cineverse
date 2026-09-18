@@ -220,3 +220,62 @@ export const fakeMovies = [
     image: "/assets/images/test.png",
   },
 ];
+
+export const fakeNews = [
+  {
+    id: "1",
+    title: "The Last of Us",
+    description:
+      "HBO has confirmed that the acclaimed post-apocalyptic drama will return for another season, with the story continuing to explore Joel and Ellie's complicated journey through a dangerous and divided world.",
+    date: "18 September",
+    image: "/assets/images/test.png",
+  },
+  {
+    id: "2",
+    title: "Stranger Things",
+    description:
+      "The final season of Stranger Things is set to bring the beloved Hawkins story to an end. The new episodes promise higher stakes, returning characters, and one final battle against the supernatural forces threatening the town.",
+    date: "16 September",
+    image: "/assets/images/test2.png",
+  },
+  {
+    id: "3",
+    title: "Wednesday",
+    description:
+      "Wednesday Addams is returning for another mysterious adventure. The upcoming season will expand the world of Nevermore Academy while introducing new characters, darker mysteries, and unexpected twists.",
+    date: "14 September",
+    image: "/assets/images/test3.png",
+  },
+  {
+    id: "4",
+    title: "The Batman",
+    description:
+      "A new chapter in the Batman universe is moving forward, with Robert Pattinson expected to return as the Dark Knight. The sequel will continue exploring Gotham and the darker side of Bruce Wayne's world.",
+    date: "12 September",
+    image: "/assets/images/test4.png",
+  },
+  {
+    id: "5",
+    title: "House of the Dragon",
+    description:
+      "The Targaryen saga continues as House of the Dragon prepares for its next chapter. The series is expected to bring more political conflicts, shifting alliances, and battles for control of the Iron Throne.",
+    date: "10 September",
+    image: "/assets/images/test.png",
+  },
+  {
+    id: "6",
+    title: "Dune: Part Three",
+    description:
+      "The next chapter of Denis Villeneuve's Dune saga is moving closer to production. The highly anticipated film is expected to continue Paul's journey while expanding the epic world of Arrakis and its powerful factions.",
+    date: "8 September",
+    image: "/assets/images/test2.png",
+  },
+  {
+    id: "7",
+    title: "Lorem",
+    description:
+      "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Enim ipsum distinctio tempore eos dicta libero fugit sequi iusto, magni molestias repellat maxime fuga eius non doloremque delectus amet fugiat saepe minus quaerat, blanditiis consequuntur. Non quas, ipsa veniam provident modi nostrum itaque dolore neque porro facilis eius natus. Sed suscipit officiis mollitia obcaecati. Similique, quasi. Iusto nulla ut illo consequatur, repudiandae quibusdam numquam deleniti ratione. Fugit doloribus quisquam distinctio nisi magni debitis ratione ipsam? Laboriosam possimus veniam, cupiditate dolorum ducimus quasi sed nisi quod quae officia pariatur, incidunt suscipit ullam maxime. Nemo quis et eligendi error velit soluta hic? Ea quidem enim rerum. Alias commodi, distinctio animi dicta iste placeat consequuntur quod, adipisci, atque asperiores natus in. Dignissimos voluptatum fuga expedita cum soluta ducimus est, eaque deleniti! Officia vero quam modi dolore corporis consequuntur earum sed quas ullam optio nostrum fuga quidem adipisci aut eligendi minus excepturi ducimus sit tenetur quisquam deserunt nisi voluptas, quasi in. Modi commodi consectetur sed delectus at harum doloremque labore autem vitae dolores blanditiis nulla corrupti quam omnis quis ipsum incidunt quae, iste ut amet eum nisi ab placeat porro. Dolor, corporis eius libero eligendi et sint suscipit nulla nesciunt, maiores aspernatur nemo quia reiciendis.",
+    date: "8 September",
+    image: "/assets/images/test3.png",
+  },
+];

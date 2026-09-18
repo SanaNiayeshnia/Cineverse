@@ -5,12 +5,21 @@ import { Navigation } from "swiper/modules";
 import { Content } from "@/types/ui/content.types";
 import AppButton from "../layout/AppButton";
 import { TbChevronLeft, TbChevronRight } from "react-icons/tb";
+import { SwiperOptions } from "swiper/types";
 
-type ContentListSwiperPropsType = { items: Content[]; listTitle: string };
+type ContentListSwiperPropsType = {
+  items: Content[];
+  listTitle: string;
+  breakpoints?: {
+    [width: number]: SwiperOptions;
+    [ratio: string]: SwiperOptions;
+  };
+};
 
 export default function ContentListSwiper({
   items,
   listTitle,
+  breakpoints,
 }: ContentListSwiperPropsType) {
   return (
     <div className="w-full grid relative">
@@ -24,17 +33,19 @@ export default function ContentListSwiper({
         spaceBetween={16}
         slidesPerView={4}
         className="w-full max-w-full overflow-hidden"
-        breakpoints={{
-          1024: {
-            slidesPerView: 5.5,
-          },
-          1280: {
-            slidesPerView: 6,
-          },
-          1536: {
-            slidesPerView: 6.5,
-          },
-        }}
+        breakpoints={
+          breakpoints || {
+            1024: {
+              slidesPerView: 5.5,
+            },
+            1280: {
+              slidesPerView: 6,
+            },
+            1536: {
+              slidesPerView: 6.5,
+            },
+          }
+        }
       >
         {items?.map((item) => (
           <SwiperSlide key={item.id}>
