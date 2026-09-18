@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Space_Grotesk, Rubik } from "next/font/google";
+import { Playfair, Rubik } from "next/font/google";
 import "./globals.css";
 import { SidebarProvider } from "@/components/ui/sidebar";
 import { AppSidebar } from "@/components/layout/appSidebar/AppSidebar";
@@ -7,8 +7,8 @@ import AppNavbar from "@/components/layout/appNavbar/AppNavbar";
 import "swiper/css";
 import "swiper/css/navigation";
 
-const spaceGrotesk = Space_Grotesk({
-  variable: "--font-space-grotesk",
+const playfair = Playfair({
+  variable: "--font-play-fair",
   subsets: ["latin"],
 });
 
@@ -26,7 +26,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html
       lang="en"
-      className={`${spaceGrotesk.variable} ${rubik.variable} h-full antialiased dark`}
+      className={`${playfair.variable} ${rubik.variable} h-full antialiased dark`}
     >
       <body className="min-h-full bg-slate-950">
         <SidebarProvider>
