@@ -18,7 +18,7 @@ export default function ContentList({
   viewAllUrl,
 }: ContentListPropsType) {
   return (
-    <section className=" max-w-full space-y-3 grid  px-5">
+    <section className=" max-w-full space-y-6 grid  px-5">
       <div className="flex justify-between gap-2">
         <h2 className="font-semibold text-2xl">{title}</h2>
 

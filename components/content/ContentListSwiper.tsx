@@ -21,7 +21,7 @@ export default function ContentListSwiper({
           prevEl: `.prev-${listTitle}`,
           nextEl: `.next-${listTitle}`,
         }}
-        spaceBetween={24}
+        spaceBetween={16}
         slidesPerView={4}
         className="w-full max-w-full overflow-hidden"
         breakpoints={{
@@ -43,13 +43,13 @@ export default function ContentListSwiper({
         ))}
       </Swiper>
       <AppButton
-        className={`absolute -left-2.5 top-1/2 prev-${listTitle} z-2 px-1.5! py-1.5! h-auto opacity-50 hover:opacity-100 backdrop-blur-lg hover:bg-primary-50!`}
+        className={`absolute -left-2.5 top-1/2 prev-${listTitle} z-2 px-1.5! py-1.5! h-auto`}
         kind="primary"
       >
         <TbChevronLeft className="size-6!" />
       </AppButton>
       <AppButton
-        className={`absolute -right-2.5 top-1/2 next-${listTitle} z-2 px-1.5! py-1.5! h-auto opacity-50 hover:opacity-100 backdrop-blur-lg hover:bg-primary-50!`}
+        className={`absolute -right-2.5 top-1/2 next-${listTitle} z-2 px-1.5! py-1.5! h-auto`}
         kind="primary"
       >
         <TbChevronRight className="size-6!" />

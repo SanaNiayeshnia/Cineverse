@@ -14,24 +14,24 @@ export default function ContentCard({
   listTitle,
   content,
 }: ContentCardPropsType) {
-  const genres = content?.genres?.slice(0, 3);
+  const genres = content?.genres?.slice(0, 2);
   const [isHovered, setIsHovered] = useState(false);
   return (
     <div
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
-      className="bg-gray-800 p-2 rounded-lg overflow-hidden relative group/card cursor-pointer w-full aspect-45/58 mx-2"
+      className="bg-gray-800 p-2 rounded-lg relative group/card cursor-pointer w-full aspect-45/58 mx-2 border"
     >
       <Image
         src={content?.image}
         alt={content?.title}
-        fill
         className="object-cover object-center rounded-lg"
+        fill
       />
-      <div className="absolute inset-0 backdrop-blur-2xl backdrop-brightness-50 bg-linear-to-t from-gray-950"></div>
+      <div className="absolute -top-0.5 -bottom-0.5 -right-0.5 -left-0.5 backdrop-blur-2xl backdrop-brightness-50 bg-linear-to-t from-gray-950 rounded-lg to-50% from-20%"></div>
 
       <div className="w-full h-full  relative rounded-md overflow-hidden">
-        <p className="absolute top-2 left-2 z-2 text-xs flex items-center gap-1 bg-gray-900 rounded py-0.5 px-1 group-hover/card:left-1/2 group-hover/card:-translate-x-1/2  group-hover/card:bg-transparent transition-all duration-300">
+        <p className="absolute top-2 left-2 z-2 text-xs flex items-center gap-1 bg-gray-900 rounded py-0.5 px-1 group-hover/card:left-1/2 group-hover/card:-translate-x-1/2  group-hover/card:bg-transparent transition-all duration-300 ">
           <TbStarFilled className="text-primary-50" size={13} />
           {content?.imdb}/10
         </p>
@@ -42,8 +42,8 @@ export default function ContentCard({
           className="object-cover object-center rounded-md"
         />
 
-        <div className="absolute inset-0 bg-linear-to-t from-gray-950 flex items-end justify-center ">
-          <div className="translate-y-full group-hover/card:translate-y-0 absolute inset-0 bg-gray-950/60 transition-all duration-300 flex items-center p-1">
+        <div className="absolute top-0 bottom-0 -right-0.5 -left-0.5 bg-linear-to-t from-gray-950 flex items-end justify-center">
+          <div className="translate-y-full group-hover/card:translate-y-0 absolute top-0 bottom-0 -right-0.5 -left-0.5 bg-gray-950/60 transition-all duration-300 flex items-center py-1 px-2.5">
             {isHovered && (
               <motion.div
                 layoutId={`${listTitle}-${content?.id}-content-details`}
@@ -69,7 +69,7 @@ export default function ContentCard({
           {!isHovered && (
             <motion.div
               layoutId={`${listTitle}-${content?.id}-content-details`}
-              className="space-y-1.5 flex flex-col items-center "
+              className="space-y-1.5 flex flex-col items-center px-2"
             >
               <motion.p
                 layoutId={`${listTitle}-${content?.id}-content-details-title`}
@@ -77,7 +77,7 @@ export default function ContentCard({
               >
                 {content?.title}
               </motion.p>
-              <p className="flex items-center text-white/80">
+              <p className="flex flex-wrap justify-center items-center text-white/80">
                 {genres?.map((genre, index) => (
                   <span key={index} className="text-xs me-0.5">
                     {genre}
