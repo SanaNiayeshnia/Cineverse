@@ -1,3 +1,4 @@
+import LegendBanner from "@/components/banners/LegendBanner";
 import PeakyBlindersBanner from "@/components/banners/PeakyBlindersBanner";
 import ContentList from "@/components/content/ContentList";
 import HomeSlider from "@/components/home/HomeSlider";
@@ -28,9 +29,14 @@ export default function Home() {
 
         <HotNewsSwiper />
       </div>
-      <ContentList title="fdgdg" viewAllUrl="/recommended" />
+      <ContentList title="Trending Movies" viewAllUrl="/trending/movies" />
       <PeakyBlindersBanner />
-      <ContentList title="rtyryr" viewAllUrl="/recommended" />
+      <ContentList title="Trending Series" viewAllUrl="/trending/series" />
+      <ContentList title="Genres" viewAllUrl="/genres" />
+      <ContentList title="Trending TV Shows" viewAllUrl="/trending/tv-shows" />
+      <ContentList title="Top Rated" viewAllUrl="/top-rated" />
+      <LegendBanner />
+      <ContentList title="My WatchList" viewAllUrl="/me/watchlist" />
     </div>
   );
 }
