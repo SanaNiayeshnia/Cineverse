@@ -134,13 +134,17 @@ function BannerTitle({
     >
       <span
         className={`text-primary-50 ${
-          font === "playfair" ? "font-playfair!" : ""
+          font === "playfair" ? "font-playfair!" : "font-anton! tracking-wide"
         }`}
       >
         {titleArray?.slice(0, 1)}
       </span>
       {titleArray?.length > 1 && (
-        <span className={font === "playfair" ? "font-playfair!" : ""}>
+        <span
+          className={
+            font === "playfair" ? "font-playfair!" : "font-anton! tracking-wide"
+          }
+        >
           {titleArray?.slice(1)}
         </span>
       )}

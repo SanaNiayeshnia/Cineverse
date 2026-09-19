@@ -57,6 +57,7 @@
   --color-primary-80: #5c4b05;
   --color-primary-90: #2e2502;
   --font-playfair: var(--font-play-fair);
+  --font-anton: var(--font-anton);
 }
 
 :root {

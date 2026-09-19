@@ -1,3 +1,4 @@
+import GridBannerGallery from "@/components/banners/GridBannerGallery";
 import LegendBanner from "@/components/banners/LegendBanner";
 import PeakyBlindersBanner from "@/components/banners/PeakyBlindersBanner";
 import ContentList from "@/components/content/ContentList";
@@ -33,6 +34,7 @@ export default function Home() {
       <PeakyBlindersBanner />
       <ContentList title="Trending Series" viewAllUrl="/trending/series" />
       <ContentList title="Genres" viewAllUrl="/genres" />
+      <GridBannerGallery />
       <ContentList title="Trending TV Shows" viewAllUrl="/trending/tv-shows" />
       <ContentList title="Top Rated" viewAllUrl="/top-rated" />
       <LegendBanner />

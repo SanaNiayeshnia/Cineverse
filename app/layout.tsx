@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Playfair, Rubik } from "next/font/google";
+import { Playfair, Rubik, Anton } from "next/font/google";
 import "./globals.css";
 import { SidebarProvider } from "@/components/ui/sidebar";
 import { AppSidebar } from "@/components/layout/appSidebar/AppSidebar";
@@ -10,6 +10,12 @@ import "swiper/css/navigation";
 const playfair = Playfair({
   variable: "--font-play-fair",
   subsets: ["latin"],
+});
+
+const anton = Anton({
+  variable: "--font-anton",
+  subsets: ["latin"],
+  weight: "400",
 });
 
 const rubik = Rubik({
@@ -26,7 +32,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html
       lang="en"
-      className={`${playfair.variable} ${rubik.variable} h-full antialiased dark`}
+      className={`${playfair.variable} ${rubik.variable} ${anton.variable} h-full antialiased dark`}
     >
       <body className="min-h-full bg-slate-950">
         <SidebarProvider>
