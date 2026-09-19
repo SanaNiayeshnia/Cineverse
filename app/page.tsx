@@ -2,6 +2,7 @@ import GridBannerGallery from "@/components/banners/GridBannerGallery";
 import LegendBanner from "@/components/banners/LegendBanner";
 import PeakyBlindersBanner from "@/components/banners/PeakyBlindersBanner";
 import ContentList from "@/components/content/ContentList";
+import ContentByGenre from "@/components/content/genres/ContentByGenre";
 import HomeSlider from "@/components/home/HomeSlider";
 import HotNewsSwiper from "@/components/news/HotNewsSwiper";
 
@@ -33,7 +34,7 @@ export default function Home() {
       <ContentList title="Trending Movies" viewAllUrl="/trending/movies" />
       <PeakyBlindersBanner />
       <ContentList title="Trending Series" viewAllUrl="/trending/series" />
-      <ContentList title="Genres" viewAllUrl="/genres" />
+      <ContentByGenre />
       <GridBannerGallery />
       <ContentList title="Trending TV Shows" viewAllUrl="/trending/tv-shows" />
       <ContentList title="Top Rated" viewAllUrl="/top-rated" />

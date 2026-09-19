@@ -77,10 +77,6 @@ export default function AnimatedBannerWrrapper({
         className={`absolute ${isLtr ? "left-1/2" : "right-1/2"}  
          bottom-0  h-[145%] w-1/2`}
         transition={{
-          layout: {
-            duration: 0.4,
-            ease: [0.4, 0, 0.2, 1],
-          },
           x: {
             duration: 0.4,
             ease: [0.4, 0, 0.2, 1],
@@ -134,7 +130,7 @@ function BannerTitle({
     >
       <span
         className={`text-primary-50 ${
-          font === "playfair" ? "font-playfair!" : "font-anton! tracking-wide"
+          font === "playfair" ? "font-playfair!" : "font-anton! tracking-wider"
         }`}
       >
         {titleArray?.slice(0, 1)}
@@ -142,7 +138,9 @@ function BannerTitle({
       {titleArray?.length > 1 && (
         <span
           className={
-            font === "playfair" ? "font-playfair!" : "font-anton! tracking-wide"
+            font === "playfair"
+              ? "font-playfair!"
+              : "font-anton! tracking-wider"
           }
         >
           {titleArray?.slice(1)}

@@ -33,7 +33,10 @@ export default function ContentCard({
       <div className="w-full h-full  relative rounded-md overflow-hidden">
         <p className="absolute top-2 left-2 z-2 text-xs flex items-center gap-1 bg-gray-900 rounded py-0.5 px-1 group-hover/card:left-1/2 group-hover/card:-translate-x-1/2  group-hover/card:bg-transparent transition-all duration-300 ">
           <TbStarFilled className="text-primary-50" size={13} />
-          {content?.imdb}/10
+          <span>
+            {content?.imdb}
+            <span className="text-white/70">/10</span>
+          </span>
         </p>
         <Image
           src={content?.image}

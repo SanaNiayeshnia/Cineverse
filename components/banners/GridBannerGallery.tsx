@@ -5,7 +5,7 @@ import { TbArrowRight } from "react-icons/tb";
 
 export default function GridBannerGallery() {
   return (
-    <div className="grid grid-cols-3 h-210 gap-6 rounded-lg overflow-hidden">
+    <div className="grid grid-cols-3 h-200 gap-6 rounded-lg overflow-hidden">
       {fakeMovies?.slice(0, 3).map((item, index) => (
         <div
           key={item?.id}
