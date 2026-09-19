@@ -6,7 +6,8 @@ import { TbArrowRight } from "react-icons/tb";
 import ContentListSwiper from "./ContentListSwiper";
 import ContentCard from "./ContentCard";
 import { SwiperOptions } from "swiper/types";
-import { Dispatch, SetStateAction } from "react";
+import { Dispatch, SetStateAction, useState } from "react";
+import { motion } from "motion/react";
 
 type ContentListPropsType = {
   title: string;
@@ -43,6 +44,8 @@ export default function ContentList({
     "Animation",
   ],
 }: ContentListPropsType) {
+  const [hoveredGenre, setHoveredGenre] = useState<string | null>(null);
+
   return (
     <section className=" max-w-full space-y-6 grid">
       <div className="space-y-3">
@@ -64,13 +67,28 @@ export default function ContentList({
             {genreList?.slice(0, 10).map((genre) => (
               <p
                 key={genre}
-                className={`px-1.5 py-1 text-white/70  rounded-sm  transition-all duration-300 ${
+                className={`relative px-1.5 py-1 text-white/70  rounded-sm  transition-all duration-300 ${
                   genre === activeGenre
-                    ? "bg-primary-50 text-gray-950! cursor-default"
-                    : "hover:bg-white/10 cursor-pointer"
+                    ? " cursor-default text-gray-950!"
+                    : " cursor-pointer"
                 }`}
                 onClick={() => setGenre?.(genre)}
+                onMouseEnter={() => setHoveredGenre(genre)}
               >
+                {genre === activeGenre && (
+                  <motion.div
+                    layoutId="selected-genre"
+                    className="absolute rounded-sm bg-primary-50 inset-0 size-full -z-1"
+                  ></motion.div>
+                )}
+
+                {genre === hoveredGenre && (
+                  <motion.div
+                    layoutId="hovered-genre"
+                    className="absolute rounded-sm bg-white/10 inset-0 size-full -z-1"
+                  ></motion.div>
+                )}
+
                 {genre}
               </p>
             ))}
