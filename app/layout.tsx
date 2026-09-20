@@ -34,7 +34,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       lang="en"
       className={`${playfair.variable} ${rubik.variable} ${anton.variable} h-full antialiased dark`}
     >
-      <body className="min-h-full bg-slate-950">
+      <body className="min-h-full bg-slate-950 overflow-x-hidden">
         <SidebarProvider>
           <AppSidebar />
           <main className="grow py-2 relative">

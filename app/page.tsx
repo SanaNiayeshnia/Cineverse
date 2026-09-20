@@ -9,7 +9,7 @@ import HotNewsSwiper from "@/components/news/HotNewsSwiper";
 
 export default function Home() {
   return (
-    <div className="relative pt-3 px-5 space-y-12 max-w-full">
+    <div className="relative pt-3 px-4 sm:px-5 space-y-12 max-w-full">
       <div className="grid   xl:place-items-start grid-cols-1 xl:grid-cols-[1fr_1fr_0.6fr] gap-x-8 gap-y-12 ">
         <div className=" xl:col-span-2 w-full">
           <HomeSlider />
@@ -22,13 +22,13 @@ export default function Home() {
         </div>
       </div>
       <ContentList title="Trending Movies" viewAllUrl="/trending/movies" />
-      {/* <PeakyBlindersBanner /> */}
+      <PeakyBlindersBanner />
       <ContentList title="Trending Series" viewAllUrl="/trending/series" />
       <ContentByGenre />
-      {/* <GridBannerGallery /> */}
+      <GridBannerGallery />
       <ContentList title="Trending TV Shows" viewAllUrl="/trending/tv-shows" />
       <ContentList title="Top Rated" viewAllUrl="/top-rated" />
-      {/* <LegendBanner /> */}
+      <LegendBanner />
       <ContentList title="My WatchList" viewAllUrl="/me/watchlist" />
     </div>
   );

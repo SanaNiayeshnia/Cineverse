@@ -11,7 +11,7 @@ export default function LegendBanner() {
       characterImageData={LEGEND_CHARACTER}
       bgImageData={LEGEND_BG}
       dir="rtl"
-      padding={15}
+      padding={30}
     />
   );
 }

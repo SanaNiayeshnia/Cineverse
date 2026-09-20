@@ -6,6 +6,7 @@ import { TbArrowRight } from "react-icons/tb";
 import { AnimatePresence, motion } from "motion/react";
 import { useState } from "react";
 import { useSidebar } from "../ui/sidebar";
+import { useIsMobile } from "@/hooks/use-mobile";
 
 type AnimatedBannerWrrapperPropsType = {
   title: string;
@@ -26,17 +27,20 @@ export default function AnimatedBannerWrrapper({
   bgImageData,
   characterImageData,
   dir = "ltr",
-  padding = 70,
+  padding = 60,
 }: AnimatedBannerWrrapperPropsType) {
   const [isHovered, setIsHovered] = useState(false);
   const isLtr = dir === "ltr";
   const { open } = useSidebar();
-  const padd = padding + (!open ? 25 : 0);
+  const isMobile = useIsMobile({ mobileBreakpoint: 1024 });
+  const isLessThan1280 = useIsMobile({ mobileBreakpoint: 1280 });
+
+  const padd = padding + (!open ? 25 : 0) - (isLessThan1280 ? 25 : 0);
   return (
     <div
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
-      className="relative w-full aspect-7/2 mt-55 group/banner"
+      className="relative w-full aspect-7/2 mt-28 sm:mt-30 md:mt-40 xl:mt-46 2xl:mt-55 group/banner"
     >
       <Image
         src={bgImageData}
@@ -45,18 +49,23 @@ export default function AnimatedBannerWrrapper({
         className="object-cover object-center w-full h-full rounded-xl"
       />
       <AnimatePresence>
-        {isHovered && (
+        {isHovered && !isMobile && (
           <div
             className={`absolute ${
               isLtr ? "left-0" : "right-0"
-            } top-15 max-w-140 gap-8`}
+            } max-w-[45%] xl:max-w-140 gap-4 xl:gap-8 top-[4%] xl:top-[15%]`}
             style={{
               [isLtr ? "left" : "right"]: `${padd}px`,
             }}
           >
-            <BannerTitle title={title} isHovered={isHovered} font={font} />
+            <BannerTitle
+              title={title}
+              isHovered={isHovered}
+              font={font}
+              isMobile={isMobile}
+            />
             <p
-              className={`mt-3 line-clamp-5 text-white/60 text-pretty text-lg ${
+              className={`mt-3 line-clamp-4 xl:line-clamp-5 text-white/60 text-pretty xl:text-lg ${
                 font === "playfair" ? "font-playfair!" : ""
               }`}
             >
@@ -65,17 +74,22 @@ export default function AnimatedBannerWrrapper({
           </div>
         )}
 
-        {!isHovered && (
-          <BannerTitle title={title} isHovered={isHovered} font={font} />
+        {(!isHovered || isMobile) && (
+          <BannerTitle
+            title={title}
+            isHovered={isHovered}
+            font={font}
+            isMobile={isMobile}
+          />
         )}
       </AnimatePresence>
 
       <motion.div
         animate={{
-          x: isHovered ? "0%" : isLtr ? "-50%" : "50%",
+          x: isHovered && !isMobile ? "0%" : isLtr ? "-50%" : "50%",
         }}
         className={`absolute ${isLtr ? "left-1/2" : "right-1/2"}  
-         bottom-0  h-[145%] w-1/2`}
+         bottom-0 h-[155%]  md:h-[145%] w-3/5 md:w-1/2`}
         transition={{
           x: {
             duration: 0.4,
@@ -94,10 +108,12 @@ export default function AnimatedBannerWrrapper({
       <AppButton
         href={href}
         kind="primary"
-        className="absolute bottom-13"
+        className="absolute hidden lg:bottom-[4%] xl:bottom-[15%] lg:block"
         style={{ right: `${padd}px` }}
       >
-        Discover More <TbArrowRight />
+        <span className="hidden lg:block">Discover</span>
+        <span>More</span>
+        <TbArrowRight />
       </AppButton>
     </div>
   );
@@ -107,19 +123,21 @@ function BannerTitle({
   isHovered = false,
   title,
   font,
+  isMobile = false,
 }: {
   isHovered: boolean;
   title: string;
   font: "default" | "playfair";
+  isMobile: boolean;
 }) {
   const titleArray = title.split(" ");
   return (
     <motion.p
-      layoutId={`${title}-banner-title`}
-      className={`font-semibold bottom-4 left-1/2 z-2  flex items-center ${
-        isHovered
-          ? "static translate-x-0 text-4xl gap-2"
-          : "absolute -translate-x-1/2 text-7xl gap-3"
+      {...(!isMobile ? { layoutId: `${title}-banner-title` } : {})}
+      className={`font-semibold bottom-2 sm:bottom-4 left-1/2 z-2  flex items-center ${
+        isHovered && !isMobile
+          ? "static translate-x-0 text-3xl xl:text-4xl gap-2"
+          : "absolute -translate-x-1/2 text-2xl min-[450px]:text-3xl sm:text-4xl md:text-5xl xl:text-7xl gap-3"
       }`}
       transition={{
         layout: {

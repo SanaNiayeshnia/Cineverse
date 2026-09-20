@@ -5,13 +5,15 @@ import { TbArrowRight } from "react-icons/tb";
 
 export default function GridBannerGallery() {
   return (
-    <div className="grid grid-cols-3 h-200 gap-6 rounded-lg overflow-hidden">
+    <div className="grid grid-cols-1 md:grid-cols-[0.7fr_0.7fr_1fr] xl:grid-cols-3 h-200 md:h-150 xl:h-200 gap-6 md:gap-4 lg:gap-6 rounded-lg overflow-hidden">
       {fakeMovies?.slice(0, 3).map((item, index) => (
         <div
           key={item?.id}
           className={`relative shadow-md group/banner ${
-            index <= 1 ? "col-span-2" : ""
-          } ${index === 2 ? "row-start-1 col-start-3 row-span-2" : ""}`}
+            index <= 1 ? "md:col-span-2" : ""
+          } ${
+            index === 2 ? "md:row-start-1 md:col-start-3 md:row-span-2" : ""
+          }`}
         >
           <Image
             src={item?.image}
@@ -22,7 +24,7 @@ export default function GridBannerGallery() {
           <div className="absolute inset-0 bg-linear-to-t from-gray-950/80 to-transparent to-35%"></div>
           <div
             className={`flex flex-col justify-between h-full p-4 relative ${
-              index === 2 ? "items-center" : ""
+              index === 2 ? "md:items-center" : ""
             }`}
           >
             <div className="h-max self-end">
@@ -34,7 +36,7 @@ export default function GridBannerGallery() {
             <div className="space-y-1">
               <p
                 className={`space-x-1 font-medium flex ${
-                  index === 2 ? "justify-center" : ""
+                  index === 2 ? "md:justify-center" : ""
                 }`}
               >
                 {item?.genres?.slice(0, 3).map((genre, index) => (
@@ -47,8 +49,8 @@ export default function GridBannerGallery() {
                 ))}
               </p>
               <p
-                className={`text-5xl font-anton! tracking-wide ${
-                  index === 2 ? "text-center" : ""
+                className={`text-4xl lg:text-5xl font-anton! tracking-wide ${
+                  index === 2 ? "md:text-center" : ""
                 }`}
               >
                 {item?.title}
