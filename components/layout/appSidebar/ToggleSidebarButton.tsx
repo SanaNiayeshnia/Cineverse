@@ -5,17 +5,15 @@ import Logo from "../Logo";
 import { motion } from "motion/react";
 
 export default function ToggleSidebarButton() {
-  const { open, setOpen } = useSidebar();
-  function onToggleSidebar() {
-    setOpen(!open);
-  }
+  const { open, toggleSidebar } = useSidebar();
+
   const Icon = open ? TbMenu2 : TbMenu3;
   return (
     <div className="flex items-center gap-4">
       <Icon
         size={38}
         className="text-primary-50 cursor-pointer hover:bg-white/10 transition-all duration-300 rounded-full p-2 hover:scale-120 active:scale-80"
-        onClick={onToggleSidebar}
+        onClick={toggleSidebar}
       />
       {!open && (
         <motion.div

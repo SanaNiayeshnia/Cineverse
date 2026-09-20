@@ -21,6 +21,31 @@ export default function ContentListSwiper({
   listTitle,
   breakpoints,
 }: ContentListSwiperPropsType) {
+  const defaultBreakpoints = {
+    400: { slidesPerView: 2.3 },
+    500: { slidesPerView: 3 },
+
+    640: {
+      slidesPerView: 4,
+    },
+    750: { slidesPerView: 4.5 },
+    850: {
+      slidesPerView: 5,
+    },
+    1024: {
+      slidesPerView: 4.5,
+    },
+    1150: {
+      slidesPerView: 5.5,
+    },
+    1280: {
+      slidesPerView: 6,
+    },
+    1536: {
+      slidesPerView: 6.5,
+    },
+  };
+
   return (
     <div className="w-full grid relative">
       <Swiper
@@ -31,21 +56,9 @@ export default function ContentListSwiper({
           nextEl: `.next-${listTitle}`,
         }}
         spaceBetween={16}
-        slidesPerView={4}
+        slidesPerView={1.8}
         className="w-full max-w-full overflow-hidden"
-        breakpoints={
-          breakpoints || {
-            1024: {
-              slidesPerView: 5.5,
-            },
-            1280: {
-              slidesPerView: 6,
-            },
-            1536: {
-              slidesPerView: 6.5,
-            },
-          }
-        }
+        breakpoints={breakpoints || defaultBreakpoints}
       >
         {items?.map((item) => (
           <SwiperSlide key={item.id}>

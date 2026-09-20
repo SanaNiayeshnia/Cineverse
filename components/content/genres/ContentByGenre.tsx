@@ -3,7 +3,7 @@ import { useState } from "react";
 import ContentList from "../ContentList";
 
 export default function ContentByGenre() {
-  const [genre, setGenre] = useState("Action");
+  const [genre, setGenre] = useState<string | null>("Action");
   return (
     <ContentList
       title="Genres"
