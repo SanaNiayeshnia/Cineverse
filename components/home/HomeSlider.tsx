@@ -61,10 +61,10 @@ export default function HomeSlider() {
         <CarouselContent>
           {fakeSlides?.map((slide) => (
             <CarouselItem key={slide?.id}>
-              <div className="relative h-100">
+              <div className="relative h-70 sm:h-90 md:h-100">
                 <div className="absolute inset-0 bg-linear-to-t from-gray-950 via-gray-950/70 to-transparent from-1% via-30% z-2 p-4 flex items-end">
                   <div className="space-y-3">
-                    <h2 className="text-3xl font-anton! tracking-wider">
+                    <h2 className="text-xl sm:text-3xl font-anton! tracking-wider">
                       {slide?.title}
                     </h2>
                     <div className="flex items-center gap-4">
@@ -74,14 +74,18 @@ export default function HomeSlider() {
                         </span>
                         {slide?.imdb}
                       </p>
-                      <p className="flex items-center divide-x-2 divide-primary-50">
+                      <p className="hidden sm:flex items-center divide-x-2 divide-primary-50">
                         {slide?.genres?.slice(0, 3).map((genre, index) => (
                           <span key={index} className="px-2 text-gray-300">
                             {genre}
                           </span>
                         ))}
                       </p>
-                      <AppButton kind="primary" href={`/details/${slide?.id}`}>
+                      <AppButton
+                        kind="primary"
+                        className="text-xs! sm:text-base"
+                        href={`/details/${slide?.id}`}
+                      >
                         More Details <TbArrowRight />
                       </AppButton>
                     </div>
@@ -97,7 +101,7 @@ export default function HomeSlider() {
             </CarouselItem>
           ))}
         </CarouselContent>
-        <div className="absolute bottom-4 right-4 z-3 flex gap-3 items-center">
+        <div className="absolute bottom-4 right-4 z-3 flex gap-2 sm:gap-3 items-center">
           <CarouselPrevious className="static! bg-primary-50! text-gray-950 cursor-pointer hover:scale-125 active:scale-95 transition-all duration-300 hover:text-gray-950! shadow [&_svg]:font-medium" />
           <CarouselNext className="static! bg-primary-50! text-gray-950 cursor-pointer hover:scale-125 active:scale-95 transition-all duration-300 hover:text-gray-950! shadow [&_svg]:font-medium" />
         </div>

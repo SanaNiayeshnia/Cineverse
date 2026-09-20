@@ -6,8 +6,8 @@ type NewsCardsPropsType = { news: News; indexLabel: string };
 
 export default function NewsCard({ news, indexLabel }: NewsCardsPropsType) {
   return (
-    <div className="rounded-xl p-4 bg-gray-900 flex flex-col gap-4 w-full h-full">
-      <div className="relative w-full aspect-4/3 rounded-lg overflow-hidden">
+    <div className="rounded-xl p-4 bg-gray-900 flex flex-col sm:flex-row xl:flex-col gap-4 w-full h-full z-2">
+      <div className="relative w-full sm:max-w-2/5 xl:max-w-full aspect-4/3 sm:aspect-square xl:aspect-4/3 rounded-lg overflow-hidden shrink-0">
         <Image
           fill
           src={news?.image}
@@ -22,7 +22,9 @@ export default function NewsCard({ news, indexLabel }: NewsCardsPropsType) {
             <HiBadgeCheck size={24} />
             Hot News
           </h4>
-          <p className="line-clamp-15">{news?.description}</p>
+          <p className="line-clamp-8 lg:line-clamp-10 xl:line-clamp-15">
+            {news?.description}
+          </p>
         </div>
 
         <div className="flex justify-between gap-2 items-center text-sm text-white/70">
