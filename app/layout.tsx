@@ -6,6 +6,8 @@ import { AppSidebar } from "@/components/layout/appSidebar/AppSidebar";
 import AppNavbar from "@/components/layout/appNavbar/AppNavbar";
 import "swiper/css";
 import "swiper/css/navigation";
+import Footer from "@/components/layout/Footer";
+import { TooltipProvider } from "@/components/ui/tooltip";
 
 const playfair = Playfair({
   variable: "--font-play-fair",
@@ -35,13 +37,16 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       className={`${playfair.variable} ${rubik.variable} ${anton.variable} h-full antialiased dark`}
     >
       <body className="min-h-full bg-slate-950 overflow-x-hidden">
-        <SidebarProvider>
-          <AppSidebar />
-          <main className="grow py-2 relative">
-            <AppNavbar />
-            <div>{children}</div>
-          </main>
-        </SidebarProvider>
+        <TooltipProvider>
+          <SidebarProvider>
+            <AppSidebar />
+            <main className="grow py-2 relative">
+              <AppNavbar />
+              <div>{children}</div>
+              <Footer />
+            </main>
+          </SidebarProvider>
+        </TooltipProvider>
       </body>
     </html>
   );
