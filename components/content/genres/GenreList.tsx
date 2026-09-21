@@ -48,7 +48,7 @@ export default function GenreList({
         {genres?.slice(0, 10).map((genre) => (
           <SwiperSlide key={genre} className="relative min-w-max max-w-max">
             <p
-              className={`px-1.5 py-1 text-white/70  rounded-sm  transition-all duration-300 text-center ${
+              className={`px-1.5 py-1 text-gray-700 dark:text-white/70  rounded-sm  transition-all duration-300 text-center ${
                 genre === activeGenre
                   ? " cursor-default text-gray-950!"
                   : " cursor-pointer"
@@ -59,18 +59,17 @@ export default function GenreList({
               {genre === activeGenre && (
                 <motion.div
                   layoutId="selected-genre"
-                  className="absolute rounded-sm bg-primary-50 inset-0 size-full -z-1"
+                  className="absolute rounded-sm bg-primary-50 inset-0 size-full z-1"
                 ></motion.div>
               )}
 
               {genre === hoveredGenre && (
                 <motion.div
                   layoutId="hovered-genre"
-                  className="absolute rounded-sm bg-white/10 inset-0 size-full -z-1"
+                  className="absolute rounded-sm bg-primary-10 dark:bg-white/10 inset-0 size-full -z-1"
                 ></motion.div>
               )}
-
-              {genre}
+              <span className="relative z-2">{genre}</span>
             </p>
           </SwiperSlide>
         ))}

@@ -22,7 +22,7 @@ export default function NewsCard({ news, indexLabel }: NewsCardsPropsType) {
             <HiBadgeCheck size={24} />
             Hot News
           </h4>
-          <p className="line-clamp-8 lg:line-clamp-10 xl:line-clamp-15">
+          <p className="line-clamp-8 lg:line-clamp-10 xl:line-clamp-15 text-white">
             {news?.description}
           </p>
         </div>

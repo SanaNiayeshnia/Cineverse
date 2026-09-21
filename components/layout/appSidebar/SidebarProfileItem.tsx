@@ -23,7 +23,7 @@ export default function SidebarProfileItem() {
       <DropdownMenuContent
         side="right"
         sideOffset={2}
-        className="bg-gray-900 border border-gray-700 text-white"
+        className="dark:bg-gray-900 border dark:border-gray-700 dark:text-white"
       >
         <DropdownMenuGroup>
           {sidebarProdileItems?.map((item) => {
@@ -31,7 +31,7 @@ export default function SidebarProfileItem() {
             return (
               <DropdownMenuItem
                 key={item?.title}
-                className="hover:bg-white/8! hover:text-white! cursor-pointer"
+                className="hover:bg-primary-10! dark:hover:bg-white/8! dark:hover:text-white! cursor-pointer"
               >
                 <Icon className="hover:text-white!" />
                 {item?.title}
@@ -46,7 +46,7 @@ export default function SidebarProfileItem() {
 
 function ProfileInfo() {
   return (
-    <div className=" px-2 py-2 flex items-center gap-2 text-white text-sm hover:bg-white/7 transition-all duration-300 rounded-sm cursor-pointer">
+    <div className=" px-2 py-2 flex items-center gap-2 dark:text-white text-sm hover:bg-primary-10 dark:hover:bg-white/7 transition-all duration-300 rounded-sm cursor-pointer">
       <div className="shrink-0 rounded-full overflow-hidden border-3  border-primary-50">
         {fakeUser?.imageUrl ? (
           <Image
@@ -63,7 +63,9 @@ function ProfileInfo() {
 
       <div>
         <p className="text-start">{fakeUser?.username}</p>
-        <p className="text-xs text-white/70">{fakeUser?.email}</p>
+        <p className="text-xs text-gray-700 dark:text-white/70">
+          {fakeUser?.email}
+        </p>
       </div>
     </div>
   );

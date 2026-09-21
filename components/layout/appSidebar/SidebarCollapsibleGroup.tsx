@@ -42,18 +42,18 @@ export default function SidebarCollapsibleGroup({
       defaultOpen={groupItem?.title === "Main"}
       className="m-0!"
     >
-      <SidebarGroup className="text-white! py-0!">
+      <SidebarGroup className=" py-0!">
         <CollapsibleTrigger
-          className={`cursor-pointer py-2 transition-all duration-300 hover:bg-white/7 rounded-sm`}
+          className={`cursor-pointer py-2 transition-all duration-300 hover:bg-primary-10 dark:hover:bg-white/7 rounded-sm`}
         >
-          <SidebarGroupLabel className="text-white! text-base flex items-center gap-2 justify-between font-normal!">
+          <SidebarGroupLabel className=" text-base flex items-center gap-2 justify-between font-normal! text-gray-950 dark:text-white">
             <div className="flex items-center gap-2 text-lg">
               <GroupIcon size={24} />
               {groupItem?.title}
             </div>
             <span
               className={`transition-all duration-300 ${
-                isGroupOpen ? "text-primary-50" : ""
+                isGroupOpen ? "text-primary-60 dark:text-primary-50" : ""
               }`}
             >
               <motion.div
@@ -96,8 +96,8 @@ export default function SidebarCollapsibleGroup({
                     <span
                       className={`text-base  ${
                         pathname === child?.url
-                          ? "font-semibold text-primary-50!"
-                          : "text-white/70!"
+                          ? "font-semibold text-primary-60! dark:text-primary-50!"
+                          : "text-gray-700! dark:text-white/70!"
                       }`}
                     >
                       {child?.title}

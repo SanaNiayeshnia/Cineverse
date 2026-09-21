@@ -40,10 +40,13 @@ export default function ContentList({
           {viewAllUrl && !all && (
             <Link
               href={viewAllUrl}
-              className="flex items-center gap-1 transition-all duration-300 hover:gap-3 hover:text-primary-50 text-sm sm:text-base"
+              className="flex items-center gap-1 transition-all duration-300 hover:gap-3 hover:text-primary-60 dark:hover:text-primary-50 text-sm sm:text-base"
             >
               View All
-              <TbArrowRight size={20} className="text-primary-50" />
+              <TbArrowRight
+                size={20}
+                className="text-primary-60 dark:text-primary-50"
+              />
             </Link>
           )}
         </div>

@@ -155,11 +155,11 @@ function BannerTitle({
       </span>
       {titleArray?.length > 1 && (
         <span
-          className={
+          className={`text-white! ${
             font === "playfair"
               ? "font-playfair!"
               : "font-anton! tracking-wider"
-          }
+          }`}
         >
           {titleArray?.slice(1)}
         </span>

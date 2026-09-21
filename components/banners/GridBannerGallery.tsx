@@ -9,7 +9,7 @@ export default function GridBannerGallery() {
       {fakeMovies?.slice(0, 3).map((item, index) => (
         <div
           key={item?.id}
-          className={`relative shadow-md group/banner ${
+          className={`relative group/banner ${
             index <= 1 ? "md:col-span-2" : ""
           } ${
             index === 2 ? "md:row-start-1 md:col-start-3 md:row-span-2" : ""
@@ -21,7 +21,7 @@ export default function GridBannerGallery() {
             fill
             className="object-cover object-center brightness-90 group-hover/banner:brightness-100 group-hover/banner:contrast-105 transition-all duration-300"
           />
-          <div className="absolute inset-0 bg-linear-to-t from-gray-950/80 to-transparent to-35%"></div>
+          <div className="absolute inset-0 bg-linear-to-t from-gray-950 /80 to-transparent to-35%"></div>
           <div
             className={`flex flex-col justify-between h-full p-2 md:p-4 relative ${
               index === 2 ? "md:items-center" : ""
@@ -49,7 +49,7 @@ export default function GridBannerGallery() {
                 ))}
               </p>
               <p
-                className={`text-3xl sm:text-4xl lg:text-5xl font-anton! tracking-wide line-clamp-2 ${
+                className={`text-3xl text-white sm:text-4xl lg:text-5xl font-anton! tracking-wide line-clamp-2 ${
                   index === 2 ? "md:text-center" : ""
                 }`}
               >

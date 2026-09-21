@@ -64,7 +64,7 @@ export default function HomeSlider() {
             <div className="relative h-70 sm:h-90 md:h-100">
               <div className="absolute inset-0 bg-linear-to-t from-gray-950 via-gray-950/70 to-transparent from-1% via-30% z-2 p-4 flex items-end">
                 <div className="space-y-3">
-                  <h2 className="text-2xl sm:text-3xl lg:text-4xl font-anton! tracking-wider line-clamp-1 md:line-clamp-2">
+                  <h2 className="text-2xl sm:text-3xl lg:text-4xl font-anton! tracking-wider line-clamp-1 md:line-clamp-2 text-white">
                     {slide?.title}
                   </h2>
                   <div className="flex items-center gap-4">

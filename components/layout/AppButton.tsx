@@ -24,7 +24,7 @@ export default function AppButton({
       {...rest}
       className={`rounded-full cursor-pointer transition-all duration-300 hover:scale-110 active:scale-80 ${
         kind === "primary"
-          ? "hover:bg-primary-60 active:bg-primary-60 bg-primary-50"
+          ? "hover:bg-primary-60 active:bg-primary-60 bg-primary-50 text-gray-950"
           : ""
       } ${className}`}
     >
