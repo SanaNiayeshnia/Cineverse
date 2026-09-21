@@ -21,7 +21,7 @@ export default function Footer() {
           return (
             <Tooltip key={item?.title}>
               <TooltipTrigger className="hover:scale-115 active:scale-90 transition-all duration-300">
-                <Link href={item?.url}>
+                <Link href={item?.url} target="_blank">
                   <Icon size={24} />
                 </Link>
               </TooltipTrigger>

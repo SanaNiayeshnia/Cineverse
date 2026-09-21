@@ -1,13 +1,12 @@
 import type { Metadata } from "next";
 import { Playfair, Rubik, Anton } from "next/font/google";
 import "./globals.css";
-import { SidebarProvider } from "@/components/ui/sidebar";
 import { AppSidebar } from "@/components/layout/appSidebar/AppSidebar";
 import AppNavbar from "@/components/layout/appNavbar/AppNavbar";
 import "swiper/css";
 import "swiper/css/navigation";
 import Footer from "@/components/layout/Footer";
-import { TooltipProvider } from "@/components/ui/tooltip";
+import Providers from "@/contexts/Providers";
 
 const playfair = Playfair({
   variable: "--font-play-fair",
@@ -34,19 +33,17 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html
       lang="en"
-      className={`${playfair.variable} ${rubik.variable} ${anton.variable} h-full antialiased dark`}
+      className={`${playfair.variable} ${rubik.variable} ${anton.variable} h-full antialiased`}
     >
       <body className="min-h-full bg-slate-950 overflow-x-hidden">
-        <TooltipProvider>
-          <SidebarProvider>
-            <AppSidebar />
-            <main className="grow py-2 relative">
-              <AppNavbar />
-              <div>{children}</div>
-              <Footer />
-            </main>
-          </SidebarProvider>
-        </TooltipProvider>
+        <Providers>
+          <AppSidebar />
+          <main className="grow py-2 relative">
+            <AppNavbar />
+            <div>{children}</div>
+            <Footer />
+          </main>
+        </Providers>
       </body>
     </html>
   );
