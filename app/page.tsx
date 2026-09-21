@@ -11,9 +11,9 @@ export default function Home() {
   return (
     <div className="relative pt-3 px-4 sm:px-5 space-y-12 max-w-full">
       <div className="grid   xl:place-items-start grid-cols-1 xl:grid-cols-[1fr_1fr_0.6fr] gap-x-8 gap-y-12 ">
-        {/* <div className=" xl:col-span-2 w-full">
+        <div className=" xl:col-span-2 w-full">
           <HomeSlider />
-        </div> */}
+        </div>
         <div className="xl:col-start-3 xl:row-span-2">
           <HotNewsSwiper />
         </div>
