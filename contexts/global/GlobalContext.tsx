@@ -1,5 +1,5 @@
 "use client";
-import { createContext, ReactNode, useState } from "react";
+import { createContext, ReactNode, useEffect, useState } from "react";
 
 export type ModeType = "dark" | "light";
 
@@ -15,9 +15,15 @@ export default function GlobalContextProvider({
 }: {
   children: ReactNode;
 }) {
-  const [mode, setMode] = useState<ModeType>(
-    (localStorage.getItem("mode") as ModeType) || "dark"
-  );
+  const [mode, setMode] = useState<ModeType>("dark");
+
+  useEffect(() => {
+    const savedMode = localStorage.getItem("mode") as ModeType | null;
+
+    if (savedMode) {
+      setMode(savedMode);
+    }
+  }, [setMode]);
 
   function toggleMode() {
     if (mode === "dark") {
