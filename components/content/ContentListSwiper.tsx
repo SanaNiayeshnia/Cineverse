@@ -67,13 +67,13 @@ export default function ContentListSwiper({
         ))}
       </Swiper>
       <AppButton
-        className={`absolute -left-2.5 top-1/2 prev-${listTitle} z-2 px-1.5! py-1.5! h-auto`}
+        className={`absolute -left-2.5 top-1/2 prev-${listTitle} z-2 px-1.5! py-1.5! h-auto hidden sm:block`}
         kind="primary"
       >
         <TbChevronLeft className="size-6!" />
       </AppButton>
       <AppButton
-        className={`absolute -right-2.5 top-1/2 next-${listTitle} z-2 px-1.5! py-1.5! h-auto`}
+        className={`absolute -right-2.5 top-1/2 next-${listTitle} z-2 px-1.5! py-1.5! h-auto hidden sm:block`}
         kind="primary"
       >
         <TbChevronRight className="size-6!" />

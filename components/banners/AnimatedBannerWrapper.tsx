@@ -40,7 +40,7 @@ export default function AnimatedBannerWrrapper({
     <div
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
-      className="relative w-full aspect-7/2 mt-28 sm:mt-30 md:mt-40 xl:mt-46 2xl:mt-55 group/banner"
+      className="relative w-full aspect-5/2 md:aspect-7/2 mt-40 min-[500px]:mt-55 md:mt-40 xl:mt-46 2xl:mt-55 group/banner"
     >
       <Image
         src={bgImageData}
@@ -89,7 +89,7 @@ export default function AnimatedBannerWrrapper({
           x: isHovered && !isMobile ? "0%" : isLtr ? "-50%" : "50%",
         }}
         className={`absolute ${isLtr ? "left-1/2" : "right-1/2"}  
-         bottom-0 h-[155%]  md:h-[145%] w-3/5 md:w-1/2`}
+         bottom-0 h-[175%]  md:h-[145%] w-[90%] md:w-1/2`}
         transition={{
           x: {
             duration: 0.4,
@@ -101,7 +101,7 @@ export default function AnimatedBannerWrrapper({
           src={characterImageData}
           placeholder="blur"
           alt=""
-          className={`w-full h-full object-cover`}
+          className={`w-full h-full object-contain`}
         />
       </motion.div>
 
@@ -137,7 +137,7 @@ function BannerTitle({
       className={`font-semibold bottom-2 sm:bottom-4 left-1/2 z-2  flex items-center ${
         isHovered && !isMobile
           ? "static translate-x-0 text-3xl xl:text-4xl gap-2"
-          : "absolute -translate-x-1/2 text-2xl min-[450px]:text-3xl sm:text-4xl md:text-5xl xl:text-7xl gap-3"
+          : "absolute -translate-x-1/2 text-3xl sm:text-4xl md:text-5xl xl:text-7xl gap-3"
       }`}
       transition={{
         layout: {

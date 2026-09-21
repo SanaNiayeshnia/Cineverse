@@ -23,7 +23,7 @@ export default function GridBannerGallery() {
           />
           <div className="absolute inset-0 bg-linear-to-t from-gray-950/80 to-transparent to-35%"></div>
           <div
-            className={`flex flex-col justify-between h-full p-4 relative ${
+            className={`flex flex-col justify-between h-full p-2 md:p-4 relative ${
               index === 2 ? "md:items-center" : ""
             }`}
           >
@@ -33,7 +33,7 @@ export default function GridBannerGallery() {
               </AppButton>
             </div>
 
-            <div className="space-y-1">
+            <div className="space-y-0.5 sm:space-y-1">
               <p
                 className={`space-x-1 font-medium flex ${
                   index === 2 ? "md:justify-center" : ""
@@ -49,7 +49,7 @@ export default function GridBannerGallery() {
                 ))}
               </p>
               <p
-                className={`text-4xl lg:text-5xl font-anton! tracking-wide ${
+                className={`text-3xl sm:text-4xl lg:text-5xl font-anton! tracking-wide line-clamp-2 ${
                   index === 2 ? "md:text-center" : ""
                 }`}
               >
